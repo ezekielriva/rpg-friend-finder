@@ -4,3 +4,8 @@
 @import "icheck.square.purple.css";
 @import "theme/AdminLTE.css";
 @import "theme/skin-purple.css";
+
+.full-height {
+  min-height: 500px;
+  height:     100%;
+}
