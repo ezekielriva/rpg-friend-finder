@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
-  resources :users, path: :frikies, only: [:index, :show]
+  resources :users, path: :freaks, only: [:index, :show]
 end
