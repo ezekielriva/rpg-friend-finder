@@ -20,8 +20,8 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Fixed Layout
-          <small>Blank example to the fixed layout</small>
+          <%= content_for?(:title) ? yield(:title) : @title %>
+          <small><%= content_for?(:subtitle) ? yield(:subtitle) : @subtitle %></small>
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
