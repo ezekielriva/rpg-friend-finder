@@ -13,6 +13,8 @@ gem 'unicorn'
 gem 'devise'
 gem 'omniauth-facebook'
 
+gem 'draper'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
