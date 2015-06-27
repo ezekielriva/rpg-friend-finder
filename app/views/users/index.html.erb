@@ -1,0 +1,21 @@
+<% @users.in_groups_of(3, false).each do |group| %>
+  <div class="row">
+    <% group.each do |user| %>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <% if user.avatar %>
+            <%= image_tag user.avatar, class: "info-box-icon" %>
+          <% else %>
+          <span class="info-box-icon bg-aqua"><i class="fa fa-user"></i></span>
+          <% end %>
+          <div class="info-box-content">
+            <span class="info-box-text">
+              <%= link_to user.decorate, user%>
+            </span>
+            <span class="info-box-number">1,410</span>
+          </div><!-- /.info-box-content -->
+        </div><!-- /.info-box -->
+      </div>
+    <% end %>
+  </div>
+<% end %>
