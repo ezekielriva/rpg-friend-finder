@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  username: postgres
+  password: root
+
+development:
+  <<: *default
+  database: rpg_finder_development
+
+test:
+  <<: *default
+  database: rpg_finder_test
+
+production:
+  <<: *default
+  database: rpg_finder_production

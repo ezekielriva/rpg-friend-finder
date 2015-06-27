@@ -1,0 +1,54 @@
+<%= content_for :devise_page, "register-page" %>
+<div class="register-box">
+  <div class="register-logo">
+    <%= link_to root_path do %>
+      <b>RPG</b> Friend Finder
+    <% end %>
+  </div>
+
+  <div class="register-box-body">
+    <p class="login-box-msg">Register as a new Friky</p>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="form-group has-feedback">
+        <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "Full name" %>
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+
+      <div class="form-group has-feedback">
+        <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+
+      <div class="form-group has-feedback">
+        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        <% if @minimum_password_length %>
+        <p class="help-block">(<%= @minimum_password_length %> characters minimum)</p>
+        <% end %>
+      </div>
+
+      <div class="form-group has-feedback">
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Retype password" %>
+        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+
+      </div>
+
+      <div class="row">
+        <div class="col-xs-8">
+          <!-- <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> I agree to the <a href="#">terms</a>
+            </label>
+          </div> -->
+        </div><!-- /.col -->
+        <div class="col-xs-4">
+          <%= f.submit "Register", class: "btn btn-primary btn-block btn-flat" %>
+        </div><!-- /.col -->
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div><!-- /.form-box -->
+</div><!-- /.register-box -->
