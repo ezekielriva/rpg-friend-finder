@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/index'
-
-  get 'users/show'
-
   root 'dashboard#index'
 
   devise_for :users, controllers: {
@@ -10,4 +6,7 @@ Rails.application.routes.draw do
   }
 
   resources :users, path: :freaks, only: [:index, :show]
+  resources :groups do
+    resources :users, only: [:destroy], controller: "groups_users"
+  end
 end

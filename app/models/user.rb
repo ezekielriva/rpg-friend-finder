@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, omniauth_providers: [:facebook]
 
+  has_many :groups,         inverse_of: :owner, foreign_key: :owner_id
+  has_many :subscriptions,  through: :groups_users
+  has_many :groups_users
+
   class << self
     def from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

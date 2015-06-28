@@ -5,5 +5,6 @@
 //= require fastclick
 //= require icheck
 //= require app
+//= require jquery.geocomplete
 
 //= require_tree .

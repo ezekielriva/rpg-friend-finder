@@ -14,6 +14,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 
 gem 'draper'
+gem 'geocoder'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

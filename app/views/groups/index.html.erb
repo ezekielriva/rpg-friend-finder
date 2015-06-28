@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-9">
+    <div class="box box-default">
+      <div class="box-header with-border">
+        <i class="fa fa-users"></i>
+        <h3 class="box-title">Groups</h3>
+        <%= link_to new_group_path, class: "btn btn-xs btn-primary btn-flat pull-right" do %>
+          <i class="fa fa-plus"></i>
+          New
+        <% end %>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Encounter point</th>
+            <th>No. Members</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @groups.decorate.each do |group| %>
+            <tr>
+              <td><%= group.name %></td>
+              <td><%= group.encounter_point %></td>
+              <td><%= group.members_no %></td>
+              <td><%= link_to show_link_label, group %></td>
+              <td><%= link_to edit_link_label, [:edit, group] %></td>
+              <td><%= link_to delete_link_label, group, method: :delete, data: {confirm: "Are you sure?"} %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-sm-8">
+    <div class="box box-info">
+      <div class="box-header">
+        <i class="fa fa-info"></i>
+        <h3 class="box-title">Information</h3>
+      </div>
+      <div class="box-body">
+        <dl class="dl-horizontal">
+          <dt>Description:</dt>
+          <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil quod necessitatibus esse voluptatibus nisi asperiores ea sit quo doloribus porro tempore sapiente consectetur quisquam, cupiditate error. Adipisci soluta assumenda ab!</dd>
+          <dt>Encounter point:</dt>
+          <dd><%= @group.encounter_point %></dd>
+        </dl>
+      </div>
+    </div>
+    <div class="box box-success">
+      <div class="box-header">
+        <i class="fa fa-map-marker"></i>
+        <h3 class="box-title">Encounter point</h3>
+      </div>
+      <%= group_map_element(@group) %>
+    </div>
+    <div class="box">
+      <div class="box-header">
+        <i class="fa fa-users"></i>
+        <h3 class="box-title">Members</h3>
+      </div>
+      <%= render "members_table", members: @group.members %>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="box box-success">
+      <div class="box-header">
+        <i class="fa fa-user"></i>
+        <h3 class="box-title">Organizer</h3>
+      </div>
+      <div class="box-body">
+        <div class="row">
+          <div class="col-sm-3">
+            <%= image_tag @group.owner_avatar, class: "img-circle" %>
+          </div>
+          <div class="col-sm-9">
+            <h4><%= @group.owner_name %></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

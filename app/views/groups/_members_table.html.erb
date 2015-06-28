@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr></tr>
+  </thead>
+  <tbody>
+    <% members.each do |member| %>
+      <tr>
+        <td><%= member.avatar %></td>
+        <td><%= member %></td>
+        <td>
+          <%= link_to delete_link_label, [@group, member], method: :delete, data: {confirm: "Are you sure?"} %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
