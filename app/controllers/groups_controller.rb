@@ -1,6 +1,6 @@
 class GroupsController < DashboardController
-  before_filter :set_group, only: [:edit, :update, :delete, :show]
-  before_filter :set_title, only: [:edit, :update, :delete, :show]
+  before_filter :set_group, only: [:edit, :update, :destroy, :show]
+  before_filter :set_title, only: [:edit, :show]
 
   def index
     @groups = Group.all
