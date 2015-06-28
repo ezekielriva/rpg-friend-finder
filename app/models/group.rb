@@ -11,4 +11,16 @@ class Group < ActiveRecord::Base
   def members_no
     members.count
   end
+
+  def as_json(options)
+    {
+      links: { self: "/groups/#{id}" },
+      data: {
+        name:      name,
+        latitude:  latitude,
+        longitude: longitude
+      },
+      meta: {}
+    }
+  end
 end
