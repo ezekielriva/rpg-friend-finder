@@ -4,6 +4,7 @@
 @import "icheck.square.purple.css";
 @import "theme/AdminLTE.css";
 @import "theme/skin-purple.css";
+@import "//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css";
 
 .full-height {
   min-height: 500px;

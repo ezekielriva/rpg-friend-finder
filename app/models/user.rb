@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :subscriptions,  through: :groups_users
   has_many :groups_users
 
+  scope :not_owner, ->(user) { where.not(id: user.id) }
+
   class << self
     def from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -26,6 +28,11 @@ class User < ActiveRecord::Base
           user.email = data["email"] if user.email.blank?
         end
       end
+    end
+
+    def not_in_group(group)
+      member_ids = group.members.pluck(:id)
+      where.not(id: member_ids)
     end
   end
 end

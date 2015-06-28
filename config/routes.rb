@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 
   resources :users, path: :freaks, only: [:index, :show]
   resources :groups do
-    resources :users, only: [:destroy], controller: "groups_users"
+    resources :users, only: [:new, :create, :destroy], controller: "groups_users"
   end
 end

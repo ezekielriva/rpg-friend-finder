@@ -5,11 +5,9 @@
   <tbody>
     <% members.each do |member| %>
       <tr>
-        <td><%= member.avatar %></td>
+        <td><%= image_tag member.avatar, class: "img-circle" %></td>
         <td><%= member %></td>
-        <td>
-          <%= link_to delete_link_label, [@group, member], method: :delete, data: {confirm: "Are you sure?"} %>
-        </td>
+        <td><%= link_to delete_link_label, [@group, member], method: :delete, data: {confirm: "Are you sure?"} %></td>
       </tr>
     <% end %>
   </tbody>

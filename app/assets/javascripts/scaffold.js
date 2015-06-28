@@ -10,6 +10,8 @@ var scaffold = function scaffold () {
     detailsAttribute :'data-geo'
   });
 
+  $(".select2").select2();
+
   (function($el){
     if (!$el) { return; }
 

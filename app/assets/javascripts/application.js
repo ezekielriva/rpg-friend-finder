@@ -6,5 +6,6 @@
 //= require icheck
 //= require app
 //= require jquery.geocomplete
+//= require select2.full
 
 //= require_tree .
