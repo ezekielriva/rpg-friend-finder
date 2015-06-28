@@ -52,6 +52,6 @@ class GroupsController < DashboardController
   end
 
   def group_params
-    params.require(:group).permit(:name, :encounter_point)
+    params.require(:group).permit(:name, :encounter_point, :description)
   end
 end
