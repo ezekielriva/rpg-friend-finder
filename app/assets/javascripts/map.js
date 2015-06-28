@@ -1,14 +1,15 @@
-mapInitializer = function initialize() {
-  var mapOptions = {
-    zoom: 8,
-    center: new google.maps.LatLng(-34.397, 150.644)
-  };
-
-  var mapContainer = document.getElementById('map-canvas');
+mapInitializer = function(position) {
+  var curLatLng    = new google.maps.LatLng(position.coords.latitude,
+                                            position.coords.longitude),
+      mapOptions   = {zoom: 8, center: curLatLng},
+      mapContainer = document.getElementById('map-canvas'),
+      map, request
+  ;
 
   if (!!mapContainer) {
-    var map = new google.maps.Map(mapContainer, mapOptions);
-    var request = $.getJSON("/api/v1/groups");
+    map     = new google.maps.Map(mapContainer, mapOptions);
+    request = $.getJSON("/api/v1/groups");
+
     request.done(function (data) {
       $.each(data, function(){
         var marker = new google.maps.Marker({
@@ -28,4 +29,10 @@ mapInitializer = function initialize() {
 
 };
 
-$("body").ready(mapInitializer);
+$("body").ready(function () {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(mapInitializer);
+  } else {
+    error('not supported');
+  }
+});
