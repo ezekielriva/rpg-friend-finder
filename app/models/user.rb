@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :groups,         inverse_of: :owner, foreign_key: :owner_id
   has_many :subscriptions,  through: :groups_users
   has_many :groups_users
+  has_many :games, through: :games_users
+  has_many :games_users
 
   scope :not_owner, ->(user) { where.not(id: user.id) }
 

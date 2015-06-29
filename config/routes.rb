@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :groups do
     resources :users, only: [:new, :create, :destroy], controller: "groups_users"
   end
+  resources :games
 
   namespace :api do
     namespace :v1 do

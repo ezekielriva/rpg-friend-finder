@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-sm-8">
+    <div class="box box-info">
+      <div class="box-header">
+        <i class="fa fa-info"></i>
+        <h3 class="box-title">Information</h3>
+      </div>
+      <div class="box-body">
+        <dl class="dl-horizontal">
+          <dt>Webpage:</dt>
+          <dd><%= link_to @game.webpage, @game.webpage %></dd>
+          <dt>Wikipedia:</dt>
+          <dd><%= link_to @game.wikipedia_link, @game.wikipedia_link %></dd>
+        </dl>
+      </div>
+  </div>
+</div>
