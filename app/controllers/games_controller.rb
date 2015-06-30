@@ -1,6 +1,5 @@
-class GamesController < ApplicationController
+class GamesController < DashboardController
   before_filter :set_game,  only: [:edit, :update, :destroy, :show]
-  before_filter :set_title, only: [:edit, :show]
 
   def index
     @games = Game.all
@@ -11,6 +10,7 @@ class GamesController < ApplicationController
   end
 
   def edit
+    @title = @game.decorate
   end
 
   def update
@@ -40,7 +40,8 @@ class GamesController < ApplicationController
   end
 
   def show
-    @game = @game.decorate
+    @game  = @game.decorate
+    @title = @game
   end
 
   private
@@ -51,9 +52,5 @@ class GamesController < ApplicationController
 
   def set_game
     @game = Game.find(params[:id])
-  end
-
-  def set_title
-    @title = @game.decorate
   end
 end
