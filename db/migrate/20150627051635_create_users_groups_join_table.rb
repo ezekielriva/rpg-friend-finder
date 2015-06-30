@@ -1,6 +1,6 @@
 class CreateUsersGroupsJoinTable < ActiveRecord::Migration
   def change
-    create_table :groups_users do |t|
+    create_table :groups_users, id: false do |t|
       t.integer :group_id, index: true
       t.integer :member_id, index: true
     end
