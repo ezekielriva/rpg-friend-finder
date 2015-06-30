@@ -1,6 +1,5 @@
 class GroupsController < DashboardController
   before_filter :set_group, only: [:edit, :update, :destroy, :show]
-  before_filter :set_title, only: [:edit, :show]
 
   def index
     @groups = Group.all
@@ -19,7 +18,9 @@ class GroupsController < DashboardController
     render :new
   end
 
-  def edit; end
+  def edit
+    @title = @group.decorate
+  end
 
   def update
     if @group.update(group_params)
@@ -31,7 +32,7 @@ class GroupsController < DashboardController
   end
 
   def show
-    @subtitle = ""
+    @title = @group.decorate
     @group = @group.decorate
   end
 
@@ -45,10 +46,6 @@ class GroupsController < DashboardController
 
   def set_group
     @group = Group.find(params[:id])
-  end
-
-  def set_title
-    @title = @group.decorate
   end
 
   def group_params
