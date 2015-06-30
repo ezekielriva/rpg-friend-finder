@@ -2,6 +2,8 @@ class Group < ActiveRecord::Base
   belongs_to  :owner,   class_name: "User"
   has_many    :members, through: :groups_users
   has_many    :groups_users, class_name: "GroupUser", dependent: :destroy
+  has_many    :games_groups, class_name: "GameGroup", dependent: :destroy
+  has_many    :games, through: :games_groups
 
   geocoded_by      :encounter_point
   after_validation :geocode

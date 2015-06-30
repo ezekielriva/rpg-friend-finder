@@ -1,0 +1,13 @@
+<table class="table">
+  <thead>
+    <tr></tr>
+  </thead>
+  <tbody>
+    <% games.each do |game| %>
+      <tr>
+        <td><%= game.name %></td>
+        <td><%= link_to delete_link_label, [@group, game], method: :delete, data: {confirm: "Are you sure?"} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

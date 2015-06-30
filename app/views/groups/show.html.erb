@@ -21,6 +21,17 @@
       </div>
       <%= group_map_element(@group) %>
     </div>
+    <div class="box box-success">
+      <div class="box-header">
+        <i class="fa fa-gavel"></i>
+        <h3 class="box-title">We play</h3>
+        <%= link_to [:new, @group, :game], class: "btn btn-xs btn-primary btn-flat pull-right" do %>
+          <i class="fa fa-plus"></i>
+          Add
+        <% end %>
+      </div>
+      <%= render "game_table", games: @group.games %>
+    </div>
   </div>
   <div class="col-sm-4">
     <div class="box box-success">
