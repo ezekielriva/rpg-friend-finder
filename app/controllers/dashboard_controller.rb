@@ -1,6 +1,8 @@
 class DashboardController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_title, :set_subtitle
+  before_action :set_title
+  before_action :set_subtitle, except: :show
+
   def index
   end
 

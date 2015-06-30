@@ -14,10 +14,17 @@ class GamesController < ApplicationController
   end
 
   def update
+    if @game.update(game_params)
+      return redirect_to @game,
+                         notice: "#{@game.decorate} has been updated successfully"
+    end
+
+    render :edit
   end
 
   def create
     @game = Game.new(game_params)
+    @game.players << current_user
     if @game.save
       return redirect_to games_path,
                          notice: "The game has been created successfully"
@@ -27,6 +34,9 @@ class GamesController < ApplicationController
   end
 
   def destroy
+    @game.destroy
+    redirect_to games_path,
+                notice: "#{@game.decorate} has been deleted successfully."
   end
 
   def show

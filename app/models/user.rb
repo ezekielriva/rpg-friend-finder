@@ -6,10 +6,10 @@ class User < ActiveRecord::Base
   devise :omniauthable, omniauth_providers: [:facebook]
 
   has_many :groups,         inverse_of: :owner, foreign_key: :owner_id
-  has_many :subscriptions,  through: :groups_users
-  has_many :groups_users
-  has_many :games, through: :games_users
-  has_many :games_users
+  has_many :subscriptions,  through: :groups_users, source: :group
+  has_many :groups_users,   class_name: "GroupUser", foreign_key: :member_id
+  has_many :games,          through: :games_users, source: :game
+  has_many :games_users,    class_name: "GameUser", foreign_key: :player_id
 
   scope :not_owner, ->(user) { where.not(id: user.id) }
 

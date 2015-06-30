@@ -133,7 +133,7 @@
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <%= link_to "Profile", current_user, class: "btn btn-default btn-flat" %>
               </div>
               <div class="pull-right">
                 <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-default btn-flat", method: :delete %>

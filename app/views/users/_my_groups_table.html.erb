@@ -1,0 +1,13 @@
+<table class="table">
+  <thead>
+    <th>Name:</th>
+  </thead>
+  <tbody>
+    <% groups.decorate.each do |group| %>
+      <tr>
+        <td><%= group.name %></td>
+        <td><%= link_to show_link_label, group %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -44,7 +44,7 @@ class GroupsController < DashboardController
   private
 
   def set_group
-    @group = current_user.groups.find(params[:id])
+    @group = Group.find(params[:id])
   end
 
   def set_title

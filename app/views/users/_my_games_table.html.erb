@@ -1,0 +1,13 @@
+<table class="table">
+  <thead>
+    <th>Name:</th>
+  </thead>
+  <tbody>
+    <% games.decorate.each do |game| %>
+      <tr>
+        <td><%= game.name %></td>
+        <td><%= link_to show_link_label, game %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
