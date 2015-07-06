@@ -1,5 +1,9 @@
 window.fbAsyncInit = function() {
-  var appID = !!location.href.match("localhost").length ? "834921849925828" : "834500276634652"
+  var PRODUCTION_ID   = "834500276634652",
+      DEVELOPMENT_ID  = "834921849925828"
+      appID           = (location.href.match("localhost") === null) ? PRODUCTION_ID : DEVELOPMENT_ID
+ ;
+ 
   FB.init({
     appId      : appID,
     xfbml      : true,
