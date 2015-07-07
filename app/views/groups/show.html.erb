@@ -28,7 +28,7 @@
         <%= link_to [:new, @group, :game], class: "btn btn-xs btn-primary btn-flat pull-right" do %>
           <i class="fa fa-plus"></i>
           Add
-        <% end %>
+        <% end if policy(@group).edit? %>
       </div>
       <%= render "game_table", games: @group.games %>
     </div>
@@ -57,7 +57,7 @@
         <%= link_to [:new, @group, :user], class: "btn btn-xs btn-primary btn-flat pull-right" do %>
           <i class="fa fa-user-plus"></i>
           Invite
-        <% end %>
+        <% end if policy(@group).edit? %>
       </div>
       <%= render "members_table", members: @group.members %>
     </div>

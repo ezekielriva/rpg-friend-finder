@@ -6,7 +6,7 @@
     <% games.each do |game| %>
       <tr>
         <td><%= game.name %></td>
-        <td><%= link_to delete_link_label, [@group, game], method: :delete, data: {confirm: "Are you sure?"} %></td>
+        <td><%= link_to delete_link_label, [@group, game], method: :delete, data: {confirm: "Are you sure?"} if policy(@group).edit? %></td>
       </tr>
     <% end %>
   </tbody>

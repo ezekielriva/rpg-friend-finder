@@ -1,4 +1,7 @@
 class DashboardController < ApplicationController
+  include Pundit
+  protect_from_forgery
+
   before_action :authenticate_user!
   before_action :set_title
   before_action :set_subtitle, except: :show

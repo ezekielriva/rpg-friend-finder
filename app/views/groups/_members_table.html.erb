@@ -7,7 +7,7 @@
       <tr>
         <td><%= image_tag member.avatar, class: "img-circle" %></td>
         <td><%= member %></td>
-        <td><%= link_to delete_link_label, [@group, member], method: :delete, data: {confirm: "Are you sure?"} %></td>
+        <td><%= link_to delete_link_label, [@group, member], method: :delete, data: {confirm: "Are you sure?"} if policy(@group).edit? %></td>
       </tr>
     <% end %>
   </tbody>

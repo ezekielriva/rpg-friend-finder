@@ -18,6 +18,8 @@ gem 'geocoder'
 
 gem 'composite_primary_keys'
 
+gem "pundit"
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

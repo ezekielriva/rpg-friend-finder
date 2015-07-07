@@ -28,8 +28,8 @@
               <td><%= group.encounter_point %></td>
               <td><%= group.members_no %></td>
               <td><%= link_to show_link_label, group %></td>
-              <td><%= link_to edit_link_label, [:edit, group] %></td>
-              <td><%= link_to delete_link_label, group, method: :delete, data: {confirm: "Are you sure?"} %></td>
+              <td><%= link_to edit_link_label, [:edit, group] if policy(group).edit? %></td>
+              <td><%= link_to delete_link_label, group, method: :delete, data: {confirm: "Are you sure?"}  if policy(group).destroy?  %></td>
             </tr>
           <% end %>
         </tbody>
