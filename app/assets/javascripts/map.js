@@ -15,7 +15,7 @@ mapInitializer = function(position) {
         var marker = new google.maps.Marker({
           position :new google.maps.LatLng(this.data.latitude,this.data.longitude),
           map      :map,
-          icon     :"/assets/poker.png",
+          icon     :mapContainer.getAttribute("data-marker-image"),
           title    :this.name,
           data     :this
         });

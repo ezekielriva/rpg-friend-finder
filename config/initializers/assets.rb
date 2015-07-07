@@ -8,4 +8,10 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w(facebook_integration.js)
+Rails.application.config.assets.precompile += %w(
+  facebook_integration.js
+  AdminLTE.scss
+  icheck.square.purple.scss
+  purple.png
+  purple@2x.png
+  )
