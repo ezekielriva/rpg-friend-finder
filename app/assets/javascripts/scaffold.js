@@ -29,7 +29,7 @@ var scaffold = function scaffold () {
     var marker = new google.maps.Marker({
       position :myLatlng,
       map      :map,
-      icon     :"/assets/poker.png",
+      icon     :$el.attr("data-marker-image"),
       title    :"Yay!"
   });
   })($("#group-map-canvas"));
