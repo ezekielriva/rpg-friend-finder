@@ -13,7 +13,7 @@ var scaffold = function scaffold () {
   $(".select2").select2();
 
   (function($el){
-    if (!$el) { return; }
+    if ($el.length !== 1) { return; }
 
     var latitude    = $el.attr("data-latitude"),
         longitude   = $el.attr("data-longitude"),

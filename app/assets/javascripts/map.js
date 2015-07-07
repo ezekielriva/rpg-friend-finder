@@ -22,7 +22,7 @@ mapInitializer = function(position) {
 
         google.maps.event.addListener(marker, "click", function () {
           window.location.pathname = this.data.links.self;
-        })
+        });
       });
     });
   }
