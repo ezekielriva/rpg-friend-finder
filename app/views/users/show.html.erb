@@ -6,7 +6,7 @@
         <h3 class="box-title">My own groups</h3>
       </div>
       <div class="box-body">
-        <%= render "my_groups_table", groups: current_user.groups %>
+        <%= render "my_groups_table", groups: @user.groups %>
       </div>
     </div>
     <div class="box box-success">
@@ -15,7 +15,7 @@
         <h3 class="box-title">My Groups</h3>
       </div>
       <div class="box-body">
-        <%= render "my_groups_table", groups: current_user.subscriptions %>
+        <%= render "my_groups_table", groups: @user.subscriptions %>
       </div>
     </div>
   </div>
@@ -28,9 +28,9 @@
       <div class="box-body">
         <dl class="dl-horizontal">
           <dt>Email:</dt>
-          <dd><%= link_to "<i class='fa fa-envelope'></i>".html_safe, "mailto:#{current_user.email}" %></dd>
+          <dd><%= link_to "<i class='fa fa-envelope'></i>".html_safe, "mailto:#{@user.email}" %></dd>
           <dt>Name:</dt>
-          <dd><%= current_user.name %></dd>
+          <dd><%= @user.name %></dd>
         </dl>
       </div>
     </div>
@@ -39,7 +39,7 @@
         <i class="fa fa-gavel"></i>
         <h3 class="box-title">I love play</h3>
       </div>
-      <%= render "my_games_table", games: current_user.games %>
+      <%= render "my_games_table", games: @user.games %>
     </div>
   </div>
 </div>
