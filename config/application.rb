@@ -24,5 +24,7 @@ module RpgFriendFinder
     config.active_record.raise_in_transactional_callbacks = true
 
     config.serve_static_files = true
+
+    config.autoload_paths << Rails.root.join('lib')
   end
 end

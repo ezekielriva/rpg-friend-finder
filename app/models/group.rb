@@ -5,6 +5,9 @@ class Group < ActiveRecord::Base
   has_many    :games_groups, class_name: "GameGroup", dependent: :destroy
   has_many    :games, through: :games_groups
 
+  scope :by_name,  -> (name)    { where("#{self.table_name}.name LIKE ?", name) }
+  scope :by_games, ->(game_ids) { joins(:games_groups).where(games_groups: { game_id: game_ids }) }
+
   geocoded_by      :encounter_point
   after_validation :geocode
 

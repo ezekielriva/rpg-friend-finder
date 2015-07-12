@@ -1,8 +1,11 @@
 class GroupsController < DashboardController
   before_filter :set_group, only: [:edit, :update, :destroy, :show]
+  before_filter :set_games, only: [:index]
 
   def index
-    @groups = Group.all
+    filter  = Filter.new(Group, params[:filter])
+    @filter = filter.object
+    @groups = filter.apply_scopes
   end
 
   def new
@@ -50,5 +53,9 @@ class GroupsController < DashboardController
 
   def group_params
     params.require(:group).permit(:name, :encounter_point, :description)
+  end
+
+  def set_games
+    @games = Game.in_groups.decorate
   end
 end
