@@ -13,6 +13,9 @@ class User < ActiveRecord::Base
 
   scope :not_owner, ->(user) { where.not(id: user.id) }
 
+  geocoded_by      :address
+  after_validation :geocode
+
   class << self
     def from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -36,5 +39,13 @@ class User < ActiveRecord::Base
       member_ids = group.members.pluck(:id)
       where.not(id: member_ids)
     end
+  end
+
+  def has_address?
+    latitude.present? && longitude.present?
+  end
+
+  def has_not_address?
+    !has_address?
   end
 end

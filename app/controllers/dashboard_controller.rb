@@ -5,6 +5,7 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
   before_action :set_title
   before_action :set_subtitle, except: :show
+  before_action :alert_address
 
   def index
   end
@@ -17,5 +18,11 @@ class DashboardController < ApplicationController
 
   def set_subtitle
     @subtitle = params[:action].humanize
+  end
+
+  def alert_address
+    if current_user.has_not_address?
+      flash.now[:alert] = "You must add your address to enable your location in the map. Change it <a href='#{edit_user_registration_path}'>here</a>".html_safe
+    end
   end
 end

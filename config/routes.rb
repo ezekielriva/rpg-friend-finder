@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root 'dashboard#index'
 
   devise_for :users, controllers: {
-    omniauth_callbacks: "users/omniauth_callbacks"
+    omniauth_callbacks: "users/omniauth_callbacks",
+    registrations:      "users/registrations"
   }
 
   resources :users, path: :freaks, only: [:index, :show]
