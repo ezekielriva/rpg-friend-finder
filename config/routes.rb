@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     registrations:      "users/registrations"
   }
 
-  resources :users, path: :freaks, only: [:index, :show]
+  resources :users, path: :freaks, only: [:index, :show] do
+    resources :games, only: [:new, :create, :destroy], controller: "games_users"
+  end
+
   resources :groups do
     resources :users, only: [:new, :create, :destroy], controller: "groups_users"
     resources :games, only: [:new, :create, :destroy], controller: "games_groups"

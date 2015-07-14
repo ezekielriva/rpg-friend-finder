@@ -12,5 +12,10 @@ class Game < ActiveRecord::Base
       game_ids = GameGroup.select(:game_id).uniq.pluck(:game_id)
       where(id: game_ids)
     end
+
+    def not_played(user)
+      game_ids = user.games.pluck(:id)
+      where.not(id: game_ids)
+    end
   end
 end
