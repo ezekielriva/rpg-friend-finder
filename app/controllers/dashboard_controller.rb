@@ -14,6 +14,10 @@ class DashboardController < ApplicationController
     @no_groups = Group.count
   end
 
+  def changelog
+    @file_path = Rails.root.join("CHANGELOG.md")
+  end
+
   private
 
   def set_title

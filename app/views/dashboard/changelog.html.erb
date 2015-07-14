@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="box box-info">
+      <div class="box-body">
+        <% File.open(@file_path).each_line do |line| %>
+          <%= line %><br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

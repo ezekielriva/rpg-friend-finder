@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   end
   resources :games
 
+  get "changelog", as: :changelog, to: "dashboard#changelog"
+
   namespace :api do
     namespace :v1 do
       resources :groups, only: [:index]
