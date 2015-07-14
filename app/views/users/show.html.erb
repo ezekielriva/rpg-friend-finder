@@ -24,6 +24,10 @@
       <div class="box-header">
         <i class="fa fa-info"></i>
         <h3 class="box-title">Information</h3>
+        <%= link_to edit_user_registration_path, class: "btn btn-xs btn-primary btn-flat pull-right" do %>
+          <i class="fa fa-pencil"></i>
+          Edit
+        <% end if policy(@user).edit? %>
       </div>
       <div class="box-body">
         <dl class="dl-horizontal">
