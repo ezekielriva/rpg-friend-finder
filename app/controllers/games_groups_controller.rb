@@ -21,14 +21,12 @@ class GamesGroupsController < DashboardController
   end
 
   def destroy
-    game     = Game.find(params[:id])
-    relation = GameGroup.where(game: game, group: @group).take
+    game = @group.games.find(params[:id])
 
-    if relation.nil?
-      redirect_to :back, alert: "#{game.decorate} doesn't belongs to this group"
-    else
-      @group.games.destroy(game)
+    if @group.games.destroy(game)
       redirect_to :back, notice: "#{game.decorate} has been removed from #{@group.decorate}"
+    else
+      redirect_to :back, alert: "#{game.decorate} doesn't belongs to this group"
     end
   end
 
