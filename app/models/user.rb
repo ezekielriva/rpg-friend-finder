@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_many :games_users,    class_name: "GameUser", foreign_key: :player_id
 
   scope :not_owner, ->(user) { where.not(id: user.id) }
+  scope :with_address, ->() { where.not(longitude: nil).where.not(latitude: nil).where.not(address: nil) }
 
   geocoded_by      :address
   after_validation :geocode
@@ -47,5 +48,19 @@ class User < ActiveRecord::Base
 
   def has_not_address?
     !has_address?
+  end
+
+  def as_json(options)
+    {
+      links: { self: "/freaks/#{id}" },
+      data: {
+        latitude:  latitude,
+        longitude: longitude,
+        address:   address,
+        name:      name,
+        avatar:    avatar
+      },
+      meta: {}
+    }
   end
 end

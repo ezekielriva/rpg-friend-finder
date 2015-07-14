@@ -8,6 +8,8 @@ class DashboardController < ApplicationController
   before_action :alert_address
 
   def index
+    @no_users  = User.count
+    @no_groups = Group.count
   end
 
   private

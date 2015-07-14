@@ -17,3 +17,9 @@
 #group-map-canvas {
   height: 250px;
 }
+
+.clickable { cursor: pointer; }
+
+.description-block .fa { font-size: 3em; }
+.description-block .description-text { color: white; }
+.description-block .description-text:hover { text-decoration: underline; }

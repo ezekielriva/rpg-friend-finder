@@ -1,38 +1,35 @@
 mapInitializer = function(position) {
-  var curLatLng    = new google.maps.LatLng(position.coords.latitude,
-                                            position.coords.longitude),
-      mapOptions   = {zoom: 8, center: curLatLng},
-      mapContainer = document.getElementById('map-canvas'),
-      map, request
-  ;
+  var mapContainer = document.getElementById('map-canvas'), map, request;
 
   if (!!mapContainer) {
-    map     = new google.maps.Map(mapContainer, mapOptions);
-    request = $.getJSON("/api/v1/groups");
+    window.map = new MapBuilder({ mapContainer: mapContainer });
+    window.map.build();
+    window.map.centerAt(position.coords);
 
-    request.done(function (data) {
-      $.each(data, function(){
-        var marker = new google.maps.Marker({
-          position :new google.maps.LatLng(this.data.latitude,this.data.longitude),
-          map      :map,
-          icon     :mapContainer.getAttribute("data-marker-image"),
-          title    :this.name,
-          data     :this
-        });
+    $("[data-behavior=FilterMap]:first").click();
 
-        google.maps.event.addListener(marker, "click", function () {
-          window.location.pathname = this.data.links.self;
-        });
-      });
-    });
   }
-
 };
 
 $("body").ready(function () {
+  $("[data-behavior=FilterMap]").on("click", function (e) {
+    loadMarkers(this.getAttribute("data-scope"), {icon: this.getAttribute("data-marker-image")});
+  });
+
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(mapInitializer);
   } else {
     error('not supported');
   }
 });
+
+function loadMarkers(url, options) {
+  var request = $.getJSON(url);
+
+  request.done(function (data) {
+    window.map.cleanMarkers();
+    $.each(data, function(){
+      window.map.addMarker(this, options);
+    });
+  });
+}
