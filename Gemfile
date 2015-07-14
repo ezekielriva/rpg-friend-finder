@@ -20,6 +20,8 @@ gem 'composite_primary_keys'
 
 gem "pundit"
 
+gem "breadcrumbs_on_rails"
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

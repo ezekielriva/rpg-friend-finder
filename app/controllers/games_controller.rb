@@ -1,6 +1,8 @@
 class GamesController < DashboardController
   before_filter :set_game,  only: [:edit, :update, :destroy, :show]
 
+  add_breadcrumb "Games", :games_path
+
   def index
     @games = Game.all
   end

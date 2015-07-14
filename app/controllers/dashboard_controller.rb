@@ -7,6 +7,8 @@ class DashboardController < ApplicationController
   before_action :set_subtitle, except: :show
   before_action :alert_address
 
+  add_breadcrumb "<i class='fa fa-dashboard'></i> Home".html_safe, :root_path
+
   def index
     @no_users  = User.count
     @no_groups = Group.count

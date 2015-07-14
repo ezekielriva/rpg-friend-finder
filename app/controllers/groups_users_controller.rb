@@ -1,5 +1,8 @@
 class GroupsUsersController < DashboardController
+  add_breadcrumb "Groups", :groups_path
   before_filter :set_group
+  before_filter :set_broadcrumb
+
 
   def new
     @title    = "User"
@@ -35,6 +38,10 @@ class GroupsUsersController < DashboardController
 
   def set_group
     @group = current_user.groups.find(params[:group_id])
+  end
+
+  def set_broadcrumb
+    add_breadcrumb @group.decorate, group_path(@group)
   end
 
 end
