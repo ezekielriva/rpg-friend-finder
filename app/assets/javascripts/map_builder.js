@@ -47,4 +47,4 @@ var MapBuilder = (function (GoogleMaps) {
   };
 
   return MapBuilder
-})(google.maps);
+})(window.google && window.google.maps);
