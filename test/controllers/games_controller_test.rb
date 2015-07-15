@@ -11,7 +11,6 @@ class GamesControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert assigns(:games).kind_of?(ActiveRecord::Relation)
   end
 
   test "should get new" do

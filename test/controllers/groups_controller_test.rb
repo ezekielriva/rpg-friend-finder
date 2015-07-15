@@ -21,31 +21,40 @@ class GroupsControllerTest < ActionController::TestCase
 
   test "should get edit" do
     sign_in(:user, @user)
-    get :edit
+    group = create(:group)
+    get :edit, id: group.id
     assert_response :success
   end
 
   test "should get update" do
     sign_in(:user, @user)
-    patch :update
-    assert_response :success
+    group = create(:group)
+    patch :update, id: group.id, group: { name: "new Name" }
+    group.reload
+    assert_equal group.name, "new Name"
+    assert_response :redirect
   end
 
   test "should get create" do
     sign_in(:user, @user)
-    post :create
-    assert_response :success
+    assert_difference ->{ @user.groups.count }, 1 do
+      post :create, group: { name: "Sample group",
+                             encounter_point: "Argentina",
+                             description: "Some one" }
+    end
   end
 
   test "should get show" do
-    get :show
+    group = create(:group, owner: @user)
+    get :show, id: group.id
     assert_response :success
   end
 
   test "should get destroy" do
     sign_in(:user, @user)
-    delete :destroy
-    assert_response :success
+    group = create(:group)
+    delete :destroy, id: group.id
+    assert_response :redirect
   end
 
 end
