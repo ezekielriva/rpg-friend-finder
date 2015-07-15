@@ -2,7 +2,7 @@ class DashboardController < ApplicationController
   include Pundit
   protect_from_forgery
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_title
   before_action :set_subtitle, except: :show
   before_action :alert_address
@@ -29,7 +29,7 @@ class DashboardController < ApplicationController
   end
 
   def alert_address
-    if current_user.has_not_address?
+    if current_user && current_user.has_not_address?
       flash.now[:alert] = "You must add your address to enable your location in the map. Change it <a href='#{edit_user_registration_path}'>here</a>".html_safe
     end
   end

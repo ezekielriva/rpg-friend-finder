@@ -22,14 +22,15 @@ gem "pundit"
 
 gem "breadcrumbs_on_rails"
 
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'dotenv-rails'
+end
+
+group :test do
+  gem 'factory_girl_rails'
 end
 
 group :production do

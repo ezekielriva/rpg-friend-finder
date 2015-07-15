@@ -2,6 +2,7 @@
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
     <!-- Sidebar user panel -->
+    <% if current_user %>
     <div class="user-panel">
       <div class="pull-left image">
         <%= image_tag current_user.avatar, class: "img-circle", alt: "User image" %>
@@ -12,6 +13,7 @@
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
     </div>
+    <% end %>
     <!-- search form -->
     <form action="#" method="get" class="sidebar-form">
       <div class="input-group">
