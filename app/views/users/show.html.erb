@@ -35,6 +35,12 @@
           <dd><%= link_to "<i class='fa fa-envelope'></i>".html_safe, "mailto:#{@user.email}" %></dd>
           <dt>Name:</dt>
           <dd><%= @user.name %></dd>
+          <% if @user.provider.present? %>
+          <dt>Contact me:</dt>
+          <dd>
+            <%= link_to "Facebook", "http://facebook.com/#{@user.uid}", rel: "nofollow", target: "_blank" %>
+          </dd>
+          <% end %>
         </dl>
       </div>
     </div>

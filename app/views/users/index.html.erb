@@ -12,7 +12,11 @@
             <span class="info-box-text">
               <%= link_to user.decorate, user%>
             </span>
-            <span class="info-box-number">1,410</span>
+            Contact me:
+            <span class="info-box-number">
+              <%= link_to "<i class='fa fa-envelope'></i>".html_safe, "mailto:#{user.email}" %>
+              <%= link_to "<i class='fa fa-facebook'></i>".html_safe, "http://facebook.com/#{user.uid}", rel: "nofollow", target: "_blank" if user.provider.present? %>
+            </span>
           </div><!-- /.info-box-content -->
         </div><!-- /.info-box -->
       </div>
