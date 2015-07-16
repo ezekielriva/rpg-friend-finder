@@ -8,7 +8,7 @@
         <%= link_to new_game_path, class: "btn btn-xs btn-primary btn-flat pull-right" do %>
           <i class="fa fa-plus"></i>
           New
-        <% end %>
+        <% end if policy(:game).new? %>
       </div>
       <table class="table">
         <thead>
@@ -24,8 +24,6 @@
             <tr>
               <td><%= game.name %></td>
               <td><%= link_to show_link_label, game %></td>
-              <td><%= link_to edit_link_label, [:edit, game] %></td>
-              <td><%= link_to delete_link_label, game, method: :delete, data: {confirm: "Are you sure?"} %></td>
             </tr>
           <% end %>
         </tbody>

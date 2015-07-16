@@ -10,7 +10,7 @@
         <%= link_to new_group_path, class: "btn btn-xs btn-primary btn-flat pull-right" do %>
           <i class="fa fa-plus"></i>
           New
-        <% end %>
+        <% end if policy(:group).new? %>
       </div>
       <table class="table">
         <thead>
