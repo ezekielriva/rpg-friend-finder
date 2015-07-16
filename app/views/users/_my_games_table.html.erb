@@ -6,8 +6,8 @@
     <% games.decorate.each do |game| %>
       <tr>
         <td><%= game.name %></td>
-        <td><%= link_to show_link_label, game %></td>
-        <td><%= link_to delete_link_label, [@user, game], method: :delete, data: {confirm: "Are you sure?"} if policy(@user).edit? %></td>
+        <td><%= link_to fa_icon("eye"), game %></td>
+        <td><%= link_to fa_icon("trash"), [@user, game], method: :delete, data: {confirm: "Are you sure?"} if policy(@user).edit? %></td>
       </tr>
     <% end %>
   </tbody>

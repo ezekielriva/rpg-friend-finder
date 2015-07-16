@@ -6,7 +6,7 @@
     <% groups.decorate.each do |group| %>
       <tr>
         <td><%= group.name %></td>
-        <td><%= link_to show_link_label, group %></td>
+        <td><%= link_to fa_icon("eye"), group %></td>
       </tr>
     <% end %>
   </tbody>

@@ -9,22 +9,4 @@ module ApplicationHelper
       text
     ].join("").html_safe
   end
-
-  def show_link_label(label = "")
-    fa_icon("eye")
-  end
-
-  def edit_link_label(label = "")
-    [
-      tag(:i, class: "fa fa-pencil"),
-      label
-    ].join("").html_safe
-  end
-
-  def delete_link_label(label = "")
-    [
-      tag(:i, class: "fa fa-trash text-danger"),
-      label
-    ].join("").html_safe
-  end
 end
