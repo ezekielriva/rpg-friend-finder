@@ -3,11 +3,15 @@ module ApplicationHelper
     send("#{resource_name}_omniauth_authorize_path", provider)
   end
 
-  def show_link_label(label = "")
+  def fa_icon(icon_name, text: nil)
     [
-      tag(:i, class: "fa fa-eye"),
-      label
+      tag(:i, class: "fa fa-#{icon_name}"),
+      text
     ].join("").html_safe
+  end
+
+  def show_link_label(label = "")
+    fa_icon("eye")
   end
 
   def edit_link_label(label = "")
