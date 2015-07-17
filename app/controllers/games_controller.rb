@@ -26,7 +26,7 @@ class GamesController < DashboardController
   end
 
   def create
-    @game = Game.new(game_params)
+    @game = Game.unscoped.new(game_params)
     @game.players << current_user
     if @game.save
       NotificationMailer.admin_email(text: t(".admin.notification", name: @game.name, id: @game.id) )
@@ -46,7 +46,7 @@ class GamesController < DashboardController
 
   def show
     @game  = @game.decorate
-    @title = @game
+    @title = @game.to_s
   end
 
   private
