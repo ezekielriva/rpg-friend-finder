@@ -1,3 +1,15 @@
+## 2015-07-16 - Release 0.0.2
+
+### New features:
+  - Open the app to everyone
+  -
+
+### Bug fixes
+  - Solve missing checkbox style in sign up page
+
+### Maintenance tasks
+  - Refactor
+
 ## 2015-07-13 - Release 0.0.1
 
 ### New features:
