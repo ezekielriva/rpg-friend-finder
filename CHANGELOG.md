@@ -1,14 +1,15 @@
 ## 2015-07-16 - Release 0.0.2
 
 ### New features:
-  - Open the app to everyone
-  -
+  - Open the app to everyone.
+  - Add contact links in the user profile and user list page.
+  - The Game creation need Admin approbation.
 
 ### Bug fixes
-  - Solve missing checkbox style in sign up page
+  - Solve missing checkbox style in sign up page.
 
 ### Maintenance tasks
-  - Refactor
+  - Start with internationalization.
 
 ## 2015-07-13 - Release 0.0.1
 
