@@ -8,6 +8,7 @@ class GamesController < DashboardController
   end
 
   def new
+    flash.now[:notice] = t(".info")
     @game = Game.new
   end
 
@@ -28,6 +29,8 @@ class GamesController < DashboardController
     @game = Game.new(game_params)
     @game.players << current_user
     if @game.save
+      NotificationMailer.admin_email(text: t(".admin.notification", name: @game.name, id: @game.id) )
+                        .deliver_now
       return redirect_to games_path,
                          notice: "The game has been created successfully"
     end
