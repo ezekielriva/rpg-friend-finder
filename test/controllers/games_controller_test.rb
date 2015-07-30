@@ -19,9 +19,9 @@ class GamesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get create" do
+  test "should post create" do
     sign_in(:user, @user)
-    assert_difference("Game.count", 1) do
+    assert_difference("Game.unscoped.count", 1) do
       post :create, game: { name: "Sample name" }
     end
   end

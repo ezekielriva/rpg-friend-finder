@@ -1,4 +1,4 @@
-rpg-friend-finder
+tabletop-friend-finder
 =================
 
 Would you like to search your geek friend? This app help you

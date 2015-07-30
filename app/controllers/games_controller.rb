@@ -34,7 +34,6 @@ class GamesController < DashboardController
       return redirect_to games_path,
                          notice: "The game has been created successfully"
     end
-
     render :new
   end
 
