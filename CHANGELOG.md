@@ -1,3 +1,13 @@
+## 2015-07-30 - Release 0.0.3
+
+### New features:
+
+### Bug fixes
+  - Solve google maps api error.
+
+### Maintenance tasks
+  - Rename app to tabletop-friend-finder.
+
 ## 2015-07-16 - Release 0.0.2
 
 ### New features:
