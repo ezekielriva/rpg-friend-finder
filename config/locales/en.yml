@@ -1,9 +1,38 @@
 en:
-  hello: "Hello world"
-
+  menu:
+    main_navigation: MAIN NAVIGATION
+    groups: Groups
+    games:  Games
+    freaks: Freaks
+    changelog: Changelog
   games:
     new:
       info: When you submit this game the Admin going to be notified. He's going to publish it as soon as possible. <br> Don't worry you'll automatically be added.
     create:
       admin:
         notification: Hey! you have a new Game! %{name} game has been added with id %{id}
+
+  devise:
+    sessions:
+      new:
+        msg: Sign in to start your session
+        password: Password
+        remember_me: Remember me
+        sign_in: Sign In
+    registrations:
+      new:
+        msg: Register as a new Friky
+        full_name: Full name
+        password: Password
+        minimun_length: (%{number} characters minimum)
+        retype_password: Retype password
+        register: Register
+    shared:
+      links:
+        or: OR
+        sing_in_with: Sign in with %{provider}
+        new_session: I already have a membership
+        new_registration: Register as a new Friky
+        forgot_passowrd: I forgot my password
+        new_confirmation: Didn't receive confirmation instructions?
+        new_unlock: Didn't receive unlock instructions?

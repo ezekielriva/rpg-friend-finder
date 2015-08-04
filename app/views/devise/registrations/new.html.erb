@@ -7,12 +7,12 @@
   </div>
 
   <div class="register-box-body">
-    <p class="login-box-msg">Register as a new Friky</p>
+    <p class="login-box-msg"><%= t(".msg") %></p>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
       <div class="form-group has-feedback">
-        <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "Full name" %>
+        <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: t(".full_name") %>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
 
@@ -22,15 +22,15 @@
       </div>
 
       <div class="form-group has-feedback">
-        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
+        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: t(".password") %>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         <% if @minimum_password_length %>
-        <p class="help-block">(<%= @minimum_password_length %> characters minimum)</p>
+        <p class="help-block"><%= t(".minimun_length", number: @minimum_password_length) %></p>
         <% end %>
       </div>
 
       <div class="form-group has-feedback">
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Retype password" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: t(".retype_password") %>
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
 
       </div>
@@ -44,7 +44,7 @@
           </div> -->
         </div><!-- /.col -->
         <div class="col-xs-4">
-          <%= f.submit "Register", class: "btn btn-primary btn-block btn-flat" %>
+          <%= f.submit t(".register"), class: "btn btn-primary btn-block btn-flat" %>
         </div><!-- /.col -->
       </div>
     <% end %>

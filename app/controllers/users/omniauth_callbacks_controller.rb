@@ -14,4 +14,5 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def passthru
   end
+
 end

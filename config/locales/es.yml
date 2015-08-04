@@ -1,0 +1,40 @@
+es:
+  sign_in: Ingresar
+  online: En linea
+  menu:
+    main_navigation: NAVEGACIÓN PRINCIPAL
+    freaks: Jugador
+    games: Juegos
+    groups: Grupos
+    changelog: Changelog
+  games:
+    new:
+      info: When you submit this game the Admin going to be notified. He's going to publish it as soon as possible. <br> Don't worry you'll automatically be added.
+    create:
+      admin:
+        notification: Hey! you have a new Game! %{name} game has been added with id %{id}
+
+  devise:
+    sessions:
+      new:
+        msg: Ingrese para iniciar su session
+        password: Contraseña
+        remember_me: Recordarme
+        sign_in: Ingresar
+    registrations:
+      new:
+        msg: Registrarse como un nuevo Jugador
+        full_name: Nombre completo
+        password: Contraseña
+        minimun_length: (%{number} caracteres minimo)
+        retype_password: Repita su contraseña
+        register: Registrarse
+    shared:
+      links:
+        or: O
+        sing_in_with: Ingresar usando %{provider}
+        new_session: Ya tengo una membresía
+        new_registration: Registrarse como un nuevo Jugador
+        forgot_passowrd: Olvide mi contraseña
+        new_confirmation: ¿No recibiste las instrucciones de confirmación?
+        new_unlock: ¿No recibiste las instrucciones de desbloqueo?

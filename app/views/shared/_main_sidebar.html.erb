@@ -10,7 +10,7 @@
       <div class="pull-left info">
         <p><%= current_user.name %></p>
 
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        <a href="#"><i class="fa fa-circle text-success"></i> <%= t(:online) %></a>
       </div>
     </div>
     <% end %>
@@ -26,7 +26,7 @@
     <!-- /.search form -->
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
-      <li class="header">MAIN NAVIGATION</li>
+      <li class="header"><%= t(".menu.main_navigation") %></li>
       <li>
         <%= link_to root_path do %>
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
@@ -35,25 +35,25 @@
       <li>
         <%= link_to groups_path do %>
           <i class="fa fa-users"></i>
-          <span>Groups</span>
+          <span><%= t(".menu.groups") %></span>
         <% end %>
       </li>
       <li>
         <%= link_to games_path do %>
           <i class="fa fa-trophy"></i>
-          <span>Games</span>
+          <span><%= t(".menu.games") %></span>
         <% end %>
       </li>
       <li>
         <%= link_to users_path do %>
           <i class="fa fa-gavel"></i>
-          <span>Freaks</span>
+          <span><%= t(".menu.freaks") %></span>
         <% end %>
       </li>
       <li>
         <%= link_to changelog_path do %>
           <i class="fa fa-th-list"></i>
-          <span>Changelog</span>
+          <span><%= t(".menu.changelog") %></span>
         <% end %>
       </li>
 <!--       <li class="treeview active">
