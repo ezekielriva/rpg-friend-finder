@@ -101,6 +101,11 @@
             </li>
           </ul>
         </li>
+        <% [:en, :es].each do |locale| %>
+          <li>
+            <%= link_to t(".menu.#{locale}"), { locale: locale } %>
+          </li>
+        <% end %>
         <!-- User Account: style can be found in dropdown.less -->
         <% if current_user %>
         <li class="dropdown user user-menu">

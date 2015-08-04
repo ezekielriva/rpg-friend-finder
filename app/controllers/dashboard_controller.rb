@@ -21,11 +21,11 @@ class DashboardController < ApplicationController
   private
 
   def set_title
-    @title = params[:controller].humanize
+    @title = I18n.t(".title.#{params[:controller]}")
   end
 
   def set_subtitle
-    @subtitle = params[:action].humanize
+    @subtitle = I18n.t(".subtitle.#{params[:action]}")
   end
 
   def alert_address

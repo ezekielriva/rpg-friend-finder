@@ -9,13 +9,21 @@ en:
     home: <i class='fa fa-dashboard'></i> Home
     games: Games
     groups: Groups
+  title:
+    dashboard: Dashboard
+  subtitle:
+    index: Index
   games:
     new:
       info: When you submit this game the Admin going to be notified. He's going to publish it as soon as possible. <br> Don't worry you'll automatically be added.
     create:
       admin:
         notification: Hey! you have a new Game! %{name} game has been added with id %{id}
-
+  shared:
+    main_header:
+      menu:
+        en: EN
+        es: ES
   devise:
     sessions:
       new:
