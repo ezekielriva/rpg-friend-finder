@@ -5,6 +5,10 @@ en:
     games:  Games
     freaks: Freaks
     changelog: Changelog
+  breadcrumbs:
+    home: <i class='fa fa-dashboard'></i> Home
+    games: Games
+    groups: Groups
   games:
     new:
       info: When you submit this game the Admin going to be notified. He's going to publish it as soon as possible. <br> Don't worry you'll automatically be added.

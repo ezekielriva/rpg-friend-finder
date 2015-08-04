@@ -2,7 +2,7 @@ class GroupsController < DashboardController
   before_filter :set_group, only: [:edit, :update, :destroy, :show]
   before_filter :set_games, only: [:index]
 
-  add_breadcrumb "Groups", :groups_path
+  add_breadcrumb I18n.t(".breadcrumbs.groups"), :groups_path
 
   def index
     filter  = Filter.new(Group, params[:filter])

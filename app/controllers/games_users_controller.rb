@@ -1,5 +1,5 @@
 class GamesUsersController < DashboardController
-  add_breadcrumb "Games", :games_path
+  add_breadcrumb I18n.t(".breadcrumbs.games"), :games_path
   before_filter :set_user
   before_filter :set_broadcrumb
 

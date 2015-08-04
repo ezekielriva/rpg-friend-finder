@@ -1,5 +1,5 @@
 class GroupsUsersController < DashboardController
-  add_breadcrumb "Groups", :groups_path
+  add_breadcrumb I18n.t(".breadcrumbs.groups"), :groups_path
   before_filter :set_group
   before_filter :set_broadcrumb
 
