@@ -30,7 +30,7 @@ class DashboardController < ApplicationController
 
   def alert_address
     if current_user && current_user.has_not_address?
-      flash.now[:alert] = "You must add your address to enable your location in the map. Change it <a href='#{edit_user_registration_path}'>here</a>".html_safe
+      flash.now[:alert] = I18n.t(".alerts.missing_address", path: edit_user_registration_path)
     end
   end
 end

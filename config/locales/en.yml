@@ -1,4 +1,6 @@
 en:
+  alerts:
+    missing_address: You must add your address to enable your location in the map. Change it <a href='%{path}'>here</a>
   menu:
     main_navigation: MAIN NAVIGATION
     groups: Groups
