@@ -4,27 +4,27 @@
       <%= form_for @game, html: {class: "form-horizontal"} do |f| %>
         <div class="box-body">
           <div class="form-group">
-            <%= f.label :name, class: "col-sm-2 control-label" %>
+            <%= f.label :name, t("shared.name"), class: "col-sm-2 control-label" %>
             <div class="col-sm-8">
               <%= f.text_field :name, class: "form-control" %>
             </div>
           </div>
           <div class="form-group">
-            <%= f.label :webpage, class: "col-sm-2 control-label" %>
+            <%= f.label :webpage, t("shared.webpage"), class: "col-sm-2 control-label" %>
             <div class="col-sm-8">
               <%= f.url_field :webpage, class: "form-control" %>
             </div>
           </div>
           <div class="form-group">
-            <%= f.label :wikipedia_link, class: "col-sm-2 control-label" %>
+            <%= f.label :wikipedia_link, t("shared.wikipedia_link"), class: "col-sm-2 control-label" %>
             <div class="col-sm-8">
               <%= f.url_field :wikipedia_link, class: "form-control" %>
             </div>
           </div>
         </div>
         <div class="box-footer">
-          <%= link_to "Back", :back, class: "btn btn-default" %>
-          <%= f.submit class: "btn btn-primary pull-right" %>
+          <%= link_to t("form.back"), :back, class: "btn btn-default" %>
+          <%= f.submit t("actions.request"), class: "btn btn-primary pull-right" %>
         </div>
       <% end %>
     </div>

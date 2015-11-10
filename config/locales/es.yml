@@ -3,6 +3,21 @@ es:
     missing_address: Debes ingresar tu dirección para habilitar tu localización en el mapa. Cambiala <a href='%{path}'>aqui</a>
   sign_in: Ingresar
   online: En linea
+  helpers:
+    submit:
+      group:
+        create: "Guardar Grupo"
+        update: "Actualizar Grupo"
+  actions:
+    new: Nuevo
+    edit: Editar
+    delete: Eliminar
+    add: Agregar
+    confirm: ¿Está usted seguro?
+    invite: Invitar
+    request: Solicitar
+  form:
+    back: Volver
   menu:
     main_navigation: NAVEGACIÓN PRINCIPAL
     freaks: Jugador
@@ -15,19 +30,90 @@ es:
     groups: Grupos
   title:
     dashboard: Dashboard
+    groups: Grupos
+    games: Juegos
   subtitle:
     index: Indice
+    new: Nuevo
+    edit: Editar
+    add: Agregar
+  dashboard:
+    index:
+      users_and_groups_locations: Ubicación de los Usuarios y Grupos
+  games_users:
+    create:
+      success: "%{count} Juegos han sido agregados a tus Juegos que te gustan"
   games:
     new:
-      info: When you submit this game the Admin going to be notified. He's going to publish it as soon as possible. <br> Don't worry you'll automatically be added.
+      info: Cuando envie la solicitud, el Administrador será notificado. El publicará el Juego lo mas pronto que sea posible. <br> No se preocupe, usted será agregado como un Jugador automaticamente.
     create:
       admin:
         notification: Hey! you have a new Game! %{name} game has been added with id %{id}
+  games:
+    notice:
+      create:
+        success: El Juego ha sido solicitado correctamente.
+  group_users:
+    notice:
+      create:
+        success: "%{count} Jugador ha sido invitado."
+    new:
+      members: Miembros
   shared:
+    name: Nombre
+    webpage: Página Web
+    wikipedia_link: Enlace a Wikipedia
+    games: Juegos
+    groups: Grupos
+    users: Usuarios
     main_header:
+      profile: Perfil
+      sign_out: Salir
       menu:
         en: EN
         es: ES
+    main_sidebar:
+      menu:
+        groups: Grupos
+        freaks: Jugador
+        games: Juegos
+        groups: Grupos
+        changelog: Lista de Cambios
+  groups:
+    notice:
+      create:
+        success: El Grupo se ha creado exitosamente.
+    filter:
+      name: Nombre
+      which_name_would_you_like_to_play?: ¿Que juego desearías jugar?
+      clear: Limpiar
+      filter: Filtrar
+    index:
+      new: Nuevo Grupo
+      name: Nombre
+      encounter_point: Punto de encuentro
+      no_members: N° Miembros
+    show:
+      information: Información
+      description: Descripción
+      encounter_point: Punto de Encuentro
+      organizer: Organizador
+      members: Miembros
+      we_play: Nosotros Jugamos
+    form:
+      name: Nombre
+      description: Descripción
+      encounter_point: Punto de encuentro
+      create: Crear Grupo
+      help:
+        encounter_point: ¿Donde juegan usualmente?
+  users:
+    show:
+      my_own_groups: Grupos que Administro
+      my_groups: Grupos a los que pertenezco
+      my_games: Juegos que me gustan
+      contact_me: Contactarme
+      information: Información
   devise:
     sessions:
       new:
@@ -35,6 +121,18 @@ es:
         password: Contraseña
         remember_me: Recordarme
         sign_in: Ingresar
+    passwords:
+      new:
+        msg: ¿Olvidate tu Contraseña?
+        send_password: Enviar instrucciones para restaurar su contraseña
+        placeholder:
+          email: Su Email
+      edit:
+        msg: Cambiar su Contraseña
+        password: Nueva Contraseña
+        retype_password: Confirme su Nueva Contraseña
+        change_password: Cambiar mi Contraseña
+        minimun_length: (%{number} caracteres minimo)
     registrations:
       new:
         msg: Registrarse como un nuevo Jugador
@@ -49,6 +147,6 @@ es:
         sing_in_with: Ingresar usando %{provider}
         new_session: Ya tengo una membresía
         new_registration: Registrarse como un nuevo Jugador
-        forgot_passowrd: Olvide mi contraseña
+        forgot_password: Olvide mi contraseña
         new_confirmation: ¿No recibiste las instrucciones de confirmación?
         new_unlock: ¿No recibiste las instrucciones de desbloqueo?

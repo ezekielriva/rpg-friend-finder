@@ -7,7 +7,8 @@ var scaffold = function scaffold () {
 
   $("[data-geocomplete]").geocomplete({
     details          :"form",
-    detailsAttribute :'data-geo'
+    detailsAttribute :'data-geo',
+    map              :"#geocomplete-map"
   });
 
   $(".select2").select2();

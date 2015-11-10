@@ -17,7 +17,7 @@ class GroupsController < DashboardController
   def create
     if @group = current_user.groups.create(group_params)
       return redirect_to groups_path,
-                         notice: "The group has been created successfully."
+                         notice: I18n.t(".groups.notice.create.success")
     end
 
     render :new

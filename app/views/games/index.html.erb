@@ -1,19 +1,18 @@
 <div class="row">
-  <div class="col-sm-3"></div>
-  <div class="col-sm-9">
+  <div class="col-sm-12">
     <div class="box box-default">
       <div class="box-header with-border">
         <i class="fa fa-users"></i>
-        <h3 class="box-title">Games</h3>
+        <h3 class="box-title"><%= t(".games") %></h3>
         <%= link_to new_game_path, class: "btn btn-xs btn-primary btn-flat pull-right" do %>
           <i class="fa fa-plus"></i>
-          New
+          <%= t("actions.request") %>
         <% end if policy(:game).new? %>
       </div>
       <table class="table">
         <thead>
           <tr>
-            <th>Name</th>
+            <th><%= t("shared.name") %></th>
             <th></th>
             <th></th>
             <th></th>

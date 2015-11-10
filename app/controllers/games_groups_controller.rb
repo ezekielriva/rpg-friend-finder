@@ -2,22 +2,19 @@ class GamesGroupsController < DashboardController
   add_breadcrumb I18n.t(".breadcrumbs.groups"), :groups_path
   before_filter :set_group
   before_filter :set_broadcrumb
+  before_filter :set_title_subtitle, only: [:new, :create]
 
   def new
-    @title    = "Games"
-    @subtitle = "add"
     @collection = Game.not_in_group(@group)
                       .decorate
   end
 
   def create
-    @title    = "Games"
-    @subtitle = "add"
     game_ids = params[:group][:games].compact
     @games  = Game.where(id: game_ids)
     @group.games << @games
 
-    redirect_to @group, notice: "#{@games.size} games have been invited."
+    redirect_to @group, notice: t(".success", count: @games.size)
   end
 
   def destroy
@@ -38,6 +35,11 @@ class GamesGroupsController < DashboardController
 
   def set_broadcrumb
     add_breadcrumb @group.decorate, group_path(@group)
+  end
+
+  def set_title_subtitle
+    @title    = t("title.games")
+    @subtitle = t("subtitle.add")
   end
 
 end

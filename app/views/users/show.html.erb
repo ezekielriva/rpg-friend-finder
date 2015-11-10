@@ -3,7 +3,7 @@
     <div class="box box-success">
       <div class="box-header">
         <i class="fa fa-users"></i>
-        <h3 class="box-title">My own groups</h3>
+        <h3 class="box-title"><%= t(".my_own_groups") %></h3>
       </div>
       <div class="box-body">
         <%= render "my_groups_table", groups: @user.groups %>
@@ -12,7 +12,7 @@
     <div class="box box-success">
       <div class="box-header">
         <i class="fa fa-users"></i>
-        <h3 class="box-title">My Groups</h3>
+        <h3 class="box-title"><%= t(".my_groups") %></h3>
       </div>
       <div class="box-body">
         <%= render "my_groups_table", groups: @user.subscriptions %>
@@ -23,20 +23,20 @@
     <div class="box box-info">
       <div class="box-header">
         <i class="fa fa-info"></i>
-        <h3 class="box-title">Information</h3>
+        <h3 class="box-title"><%= t(".information") %></h3>
         <%= link_to edit_user_registration_path, class: "btn btn-xs btn-primary btn-flat pull-right" do %>
           <i class="fa fa-pencil"></i>
-          Edit
+          <%= t("actions.edit") %>
         <% end if policy(@user).edit? %>
       </div>
       <div class="box-body">
         <dl class="dl-horizontal">
           <dt>Email:</dt>
           <dd><%= link_to "<i class='fa fa-envelope'></i>".html_safe, "mailto:#{@user.email}" %></dd>
-          <dt>Name:</dt>
+          <dt><%= t("shared.name") %></dt>
           <dd><%= @user.name %></dd>
           <% if @user.provider.present? %>
-          <dt>Contact me:</dt>
+          <dt><%= t(".contact_me") %></dt>
           <dd>
             <%= link_to "Facebook", "http://facebook.com/#{@user.uid}", rel: "nofollow", target: "_blank" %>
           </dd>
@@ -47,10 +47,10 @@
     <div class="box box-info">
       <div class="box-header">
         <i class="fa fa-gavel"></i>
-        <h3 class="box-title">I love play</h3>
+        <h3 class="box-title"><%= t(".my_games") %></h3>
         <%= link_to new_user_game_path(@user), class: "btn btn-xs btn-primary btn-flat pull-right" do %>
           <i class="fa fa-plus"></i>
-          Add
+          <%= t("actions.add") %>
         <% end if policy(@user).edit? %>
       </div>
       <%= render "my_games_table", games: @user.games %>

@@ -125,7 +125,7 @@
               </p>
             </li>
             <!-- Menu Body -->
-            <li class="user-body">
+            <!-- li class="user-body">
               <div class="col-xs-4 text-center">
                 <a href="#">Followers</a>
               </div>
@@ -135,14 +135,14 @@
               <div class="col-xs-4 text-center">
                 <a href="#">Friends</a>
               </div>
-            </li>
+            </li -->
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <%= link_to "Profile", current_user, class: "btn btn-default btn-flat" %>
+                <%= link_to t(".profile"), current_user, class: "btn btn-default btn-flat" %>
               </div>
               <div class="pull-right">
-                <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-default btn-flat", method: :delete %>
+                <%= link_to t(".sign_out"), destroy_user_session_path, class: "btn btn-default btn-flat", method: :delete %>
               </div>
             </li>
           </ul>

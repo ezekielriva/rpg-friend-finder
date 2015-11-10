@@ -33,6 +33,18 @@ en:
         password: Password
         remember_me: Remember me
         sign_in: Sign In
+    passwords:
+      new:
+        msg: Forgott your password?
+        send_password: Send me reset password instructions
+        placeholder:
+          email: Email
+      edit:
+        msg: Change your password
+        password: New password
+        retype_password: Confirm new password
+        minimun_length: (%{number} characters minimum)
+        change_password: Change my password
     registrations:
       new:
         msg: Register as a new Friky
@@ -47,6 +59,6 @@ en:
         sing_in_with: Sign in with %{provider}
         new_session: I already have a membership
         new_registration: Register as a new Friky
-        forgot_passowrd: I forgot my password
+        forgot_password: I forgot my password
         new_confirmation: Didn't receive confirmation instructions?
         new_unlock: Didn't receive unlock instructions?

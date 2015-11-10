@@ -6,18 +6,18 @@
     <div class="box box-default">
       <div class="box-header with-border">
         <i class="fa fa-users"></i>
-        <h3 class="box-title">Groups</h3>
+        <h3 class="box-title"><%= t("title.groups") %></h3>
         <%= link_to new_group_path, class: "btn btn-xs btn-primary btn-flat pull-right" do %>
           <i class="fa fa-plus"></i>
-          New
+          <%= t(".new") %>
         <% end if policy(:group).new? %>
       </div>
       <table class="table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Encounter point</th>
-            <th>No. Members</th>
+            <th><%= t(".name") %></th>
+            <th><%= t(".encounter_point") %></th>
+            <th><%= t(".no_members") %></th>
             <th></th>
             <th></th>
             <th></th>
@@ -31,7 +31,7 @@
               <td><%= group.members_no %></td>
               <td><%= link_to fa_icon("eye"), group %></td>
               <td><%= link_to fa_icon("edit"), [:edit, group] if policy(group).edit? %></td>
-              <td><%= link_to fa_icon("trash"), group, method: :delete, data: {confirm: "Are you sure?"}  if policy(group).destroy?  %></td>
+              <td><%= link_to fa_icon("trash"), group, method: :delete, data: {confirm: t("actions.confirm")}  if policy(group).destroy?  %></td>
             </tr>
           <% end %>
         </tbody>

@@ -2,7 +2,7 @@
   <div class="col-md-12 full-heigh">
     <div class="box box-success">
       <div class="box-header with-border">
-        <h3 class="box-title">User and Group locations</h3>
+        <h3 class="box-title"><%= t(".users_and_groups_locations") %></h3>
       </div>
       <div class="box-body no-padding">
         <div class="row">
@@ -14,12 +14,12 @@
               <div class="description-block margin-bottom clickable" data-behavior="FilterMap" data-scope="<%= api_v1_groups_path %>" data-marker-image="<%= image_url("poker.png") %>">
                 <i class="fa fa-group"></i>
                 <h5 class="description-header"><%= @no_groups %></h5>
-                <span class="description-text">Groups</span>
+                <span class="description-text"><%= t("shared.groups") %></span>
               </div>
               <div class="description-block margin-bottom clickable" data-behavior="FilterMap" data-scope="<%= api_v1_users_path %>" data-marker-image="<%= image_url("poker.png") %>">
                 <i class="fa fa-gavel"></i>
                 <h5 class="description-header"><%= @no_users %></h5>
-                <span class="description-text">Users</span>
+                <span class="description-text"><%= t("shared.users") %></span>
               </div>
             </div>
           </div>

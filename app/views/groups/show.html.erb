@@ -3,13 +3,13 @@
     <div class="box box-info">
       <div class="box-header">
         <i class="fa fa-info"></i>
-        <h3 class="box-title">Information</h3>
+        <h3 class="box-title"><%= t(".information") %></h3>
       </div>
       <div class="box-body">
         <dl class="dl-horizontal">
-          <dt>Description:</dt>
+          <dt><%= t(".description") %></dt>
           <dd><%= @group.description %></dd>
-          <dt>Encounter point:</dt>
+          <dt><%= t(".encounter_point") %></dt>
           <dd><%= @group.encounter_point %></dd>
         </dl>
       </div>
@@ -17,17 +17,17 @@
     <div class="box box-success">
       <div class="box-header">
         <i class="fa fa-map-marker"></i>
-        <h3 class="box-title">Encounter point</h3>
+        <h3 class="box-title"><%= t(".encounter_point") %></h3>
       </div>
       <%= group_map_element(@group) %>
     </div>
     <div class="box box-success">
       <div class="box-header">
         <i class="fa fa-gavel"></i>
-        <h3 class="box-title">We play</h3>
+        <h3 class="box-title"><%= t(".we_play") %></h3>
         <%= link_to [:new, @group, :game], class: "btn btn-xs btn-primary btn-flat pull-right" do %>
           <i class="fa fa-plus"></i>
-          Add
+          <%= t("actions.add") %>
         <% end if policy(@group).edit? %>
       </div>
       <%= render "game_table", games: @group.games %>
@@ -37,7 +37,7 @@
     <div class="box box-success">
       <div class="box-header">
         <i class="fa fa-user"></i>
-        <h3 class="box-title">Organizer</h3>
+        <h3 class="box-title"><%= t(".organizer") %></h3>
       </div>
       <div class="box-body">
         <div class="row">
@@ -53,10 +53,10 @@
     <div class="box">
       <div class="box-header">
         <i class="fa fa-users"></i>
-        <h3 class="box-title">Members</h3>
+        <h3 class="box-title"><%= t(".members") %></h3>
         <%= link_to [:new, @group, :user], class: "btn btn-xs btn-primary btn-flat pull-right" do %>
           <i class="fa fa-user-plus"></i>
-          Invite
+          <%= t("actions.invite") %>
         <% end if policy(@group).edit? %>
       </div>
       <%= render "members_table", members: @group.members %>

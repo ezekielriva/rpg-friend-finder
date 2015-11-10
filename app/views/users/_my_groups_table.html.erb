@@ -1,12 +1,14 @@
 <table class="table">
   <thead>
-    <th>Name:</th>
+    <th><%= t("shared.name") %></th>
   </thead>
   <tbody>
     <% groups.decorate.each do |group| %>
       <tr>
         <td><%= group.name %></td>
         <td><%= link_to fa_icon("eye"), group %></td>
+        <td><%= link_to fa_icon("edit"), [:edit, group] if policy(group).edit? %></td>
+        <td><%= link_to fa_icon("trash"), group, method: :delete, data: {confirm: t("actions.confirm")}  if policy(group).destroy?  %></td>
       </tr>
     <% end %>
   </tbody>

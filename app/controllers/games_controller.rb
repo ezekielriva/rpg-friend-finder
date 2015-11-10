@@ -32,7 +32,7 @@ class GamesController < DashboardController
       NotificationMailer.admin_email(text: t(".admin.notification", name: @game.name, id: @game.id) )
                         .deliver_now
       return redirect_to games_path,
-                         notice: "The game has been created successfully"
+                         notice: I18n.t("games.notice.create.success")
     end
     render :new
   end

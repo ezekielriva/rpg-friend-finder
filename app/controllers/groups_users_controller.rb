@@ -19,7 +19,7 @@ class GroupsUsersController < DashboardController
     @members  = User.where(id: member_ids)
     @group.members << @members
 
-    redirect_to @group, notice: "#{@members.size} users have been invited."
+    redirect_to @group, notice: I18n.t("group_users.notice.create.success", count: @members.size)
   end
 
   def destroy
