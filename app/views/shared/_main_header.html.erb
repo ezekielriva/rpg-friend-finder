@@ -110,7 +110,7 @@
         <% if current_user %>
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <%= image_tag current_user.avatar, class: "user-image", alt: "User avatar" %>
+            <%= image_tag current_user.decorate.avatar, class: "user-image", alt: "User avatar" %>
             <span class="hidden-xs">
               <%= current_user.name %>
             </span>
@@ -118,10 +118,10 @@
           <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
-              <%= image_tag current_user.avatar, class: "img-circle", alt: "User image" %>
+              <%= image_tag current_user.decorate.avatar, class: "img-circle", alt: "User image" %>
               <p>
                 <%= current_user.name %> - Web Developer
-                <small>Member since Nov. 2012</small>
+                <small><%= t(".member_since", date: current_user.created_at.strftime('%b. %Y')) %></small>
               </p>
             </li>
             <!-- Menu Body -->

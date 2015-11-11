@@ -4,5 +4,6 @@ FactoryGirl.define do
     password              :password
     password_confirmation :password
     name                  {"Sample name"}
+    address               {"St. 123"}
   end
 end

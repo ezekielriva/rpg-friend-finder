@@ -3,11 +3,7 @@
     <% group.each do |user| %>
       <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="info-box">
-          <% if user.avatar %>
-            <%= image_tag user.avatar, class: "info-box-icon" %>
-          <% else %>
-          <span class="info-box-icon bg-aqua"><i class="fa fa-user"></i></span>
-          <% end %>
+          <%= image_tag user.decorate.avatar, class: "info-box-icon" %>
           <div class="info-box-content">
             <span class="info-box-text">
               <%= link_to user.decorate, user%>

@@ -69,6 +69,7 @@ es:
     main_header:
       profile: Perfil
       sign_out: Salir
+      member_since: "Miembro desde %{date}"
       menu:
         en: EN
         es: ES
@@ -141,6 +142,7 @@ es:
         minimun_length: (%{number} caracteres minimo)
         retype_password: Repita su contraseña
         register: Registrarse
+        address: Dirección
     shared:
       links:
         or: O

@@ -17,9 +17,15 @@
       </div>
 
       <div class="form-group has-feedback">
-        <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
+        <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
+
+      <div class="form-group has-feedback">
+        <%= f.text_field :address, class: "form-control", placeholder: t(".address"), data: { geocomplete: true } %>
+        <span class="glyphicon glyphicon-map form-control-feedback"></span>
+      </div>
+      <div class="hide"><div id="geocomplete-map"></div></div>
 
       <div class="form-group has-feedback">
         <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: t(".password") %>
